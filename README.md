@@ -34,6 +34,7 @@ API Endpoints:
 Method: POST
 URL: http://localhost:8000/upload
 Request Body: Multipart form-data with a file named "file" containing the CSV data.
+
 Response:
 
 JSON
@@ -44,6 +45,7 @@ JSON
 
 message: Confirmation message for successful upload.
 file_id: Unique identifier for the uploaded data, used in subsequent requests.
+
 2. Get Summary:
 
 Method: GET
@@ -84,18 +86,18 @@ Response:
 JSON
 {
   "message": "Transformations applied successfully",
-  "file_id": "new-unique-id"  # New ID for the transformed data
+  "file_id": "new_file_id"  # New ID for the transformed data
 }
 
 message: Confirmation message for successful transformation.
-file_id: Unique identifier for the transformed data (different from the original upload ID).
+new_file_id: Unique identifier for the transformed data (different from the original upload ID).
 
 4. Visualize Data:
 
 Method: GET
 URL: http://localhost:8000/visualize/{new_file_id}
 Path Parameters:
-{new-file_id}: The unique ID obtained from transforming the data.
+{new_file_id}: The unique ID obtained from transforming the data.
 
 Response:
 
